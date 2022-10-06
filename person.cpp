@@ -27,14 +27,14 @@ int Person::fib(int n){
       return fib(n-1) + fib(n-2);
    
 }
-
-int Person::fibHelp(){
-	return fib(age);
-}
  
 void Person::set(int n){
 	age = n;
 	}
+
+int Person::fibHelp(){
+	return fib(age);
+}
 
 
 extern "C"{

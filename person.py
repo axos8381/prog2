@@ -9,9 +9,9 @@ class Person(object):
 		lib.Person_get.argtypes = [ctypes.c_void_p]
 		lib.Person_get.restype = ctypes.c_int
 		lib.Person_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
-		lib.Person_delete.argtypes = [ctypes.c_void_p]
 		lib.Person_fibHelp.argtypes = [ctypes.c_void_p]
 		lib.Person_fibHelp.restype = ctypes.c_int
+		lib.Person_delete.argtypes = [ctypes.c_void_p]
 		self.obj = lib.Person_new(age)
 
 	def get(self):
