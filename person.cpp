@@ -21,11 +21,11 @@ int Person::get(){
 	}
 
 int Person::fib(int n){
-	if((n==1)||(n==0)) {
-      return(n);
-   }else {
-      return(fib(n-1)+fib(n-2));
+	if(n <= 1) {
+      returnn;
    }
+      return fib(n-1) + fib(n-2);
+   
 }
 
 int Person::fibHelp(){
