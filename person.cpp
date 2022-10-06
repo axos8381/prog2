@@ -22,7 +22,7 @@ int Person::get(){
 
 int Person::fib(int n){
 	if(n <= 1) {
-      returnn;
+      return n;
    }
       return fib(n-1) + fib(n-2);
    
