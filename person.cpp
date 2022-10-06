@@ -9,7 +9,7 @@ class Person{
 		int fibHelp();
 	private:
 		int age;
-		inf fib();
+		int fib();
 	};
  
 Person::Person(int n){
@@ -41,7 +41,7 @@ extern "C"{
 	Person* Person_new(int n) {return new Person(n);}
 	int Person_get(Person* person) {return person->get();}
 	void Person_set(Person* person, int n) {person->set(n);}
-	int Person_fibhelp(Person* person) {return person->fibhelp();}
+	int Person_fibHelp(Person* person) {return person->fibHelp();}
 	void Person_delete(Person* person){
 		if (person){
 			delete person;
