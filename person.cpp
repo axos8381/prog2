@@ -9,7 +9,7 @@ class Person{
 		int fibHelp();
 	private:
 		int age;
-		int fib();
+		int fib(int);
 	};
  
 Person::Person(int n){
