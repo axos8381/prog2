@@ -40,8 +40,8 @@ void Person::set(int n){
 extern "C"{
 	Person* Person_new(int n) {return new Person(n);}
 	int Person_get(Person* person) {return person->get();}
-	int Person_fibHelp(Person* person) {return person->fibHelp();}
 	void Person_set(Person* person, int n) {person->set(n);}
+	int Person_fibhelp(Person* person) {return person->fibhelp();}
 	void Person_delete(Person* person){
 		if (person){
 			delete person;
