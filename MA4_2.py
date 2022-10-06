@@ -6,7 +6,7 @@ def main():
 	f = Person(5)
 	print(f.get())
 	f.set(7)
-	f.fib
+	print(f"kan man få en fibbe eller?: {f.fib}")
 	print(f.get())
 	
 
