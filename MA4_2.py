@@ -16,17 +16,33 @@ def main():
 	timeFibC = []
 	timeFibP = []
 	timeFibN = []
-	test1 = list(range(30, 45))
+	test1 = list(range(20, 45))
 	for x in test1:
-		f = Person(x)
-		tstartC = time.perf_counter()
-		f.fib()
-		tstopC = time.perf_counter()
-		tidC = tstartC - tstopC
-		timeFibC.append(tidC)
+		if x >= 30:
+			f = Person(x)
+			tstartC = time.perf_counter()
+			f.fib()
+			tstopC = time.perf_counter()
+			tidC = tstopC - tstartC
+			timeFibC.append(tidC)
+		if x <= 35:
+			tstartP = time.perf_counter()
+			fib_py(x)
+			tstopP = time.perf_counter()
+			tidP = tstopP - tstartP
+			timeFibP.append(tidP)
 
+	print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
 	print(timeFibC)
+	print(f"Time with python fib functions for n, n=20,...,35:")
+	print(timeFibP)
 
+	f = Person(47)
+	tstartC = time.perf_counter()
+	value = f.fib()
+	tstopC = time.perf_counter()
+	tidC = tstopC - tstartC
+	print(f"fib for Person(47) is {value} and took {tidC} seconds to calculate using C++ function")
 
 	
 	
