@@ -42,12 +42,14 @@ def main():
 		tstopN = time.perf_counter()
 		tidN = tstopN - tstartN
 		timeFibN.append(tidN)
-
-		tstartP = time.perf_counter()
-		fib_py(x)
-		tstopP = time.perf_counter()
-		tidP = tstopP - tstartP
-		timeFibP.append(tidP)
+		if x < 35:
+			tstartP = time.perf_counter()
+			fib_py(x)
+			tstopP = time.perf_counter()
+			tidP = tstopP - tstartP
+			timeFibP.append(tidP)
+		else:
+			timeFibP.append(0)
 
 	print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
 	print(timeFibC)
