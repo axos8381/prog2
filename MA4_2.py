@@ -41,7 +41,7 @@ def main():
 		fib_numba(x)
 		tstopN = time.perf_counter()
 		tidN = tstopN - tstartN
-		timeFibP.append(tidN)
+		timeFibN.append(tidN)
 
 		tstartP = time.perf_counter()
 		fib_py(x)
@@ -51,8 +51,10 @@ def main():
 
 	print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
 	print(timeFibC)
-	print(f"Time with python fib functions for n, n=20,...,35:")
+	print(f"Time with python fib functions for n, n=20,...,45:")
 	print(timeFibP)
+	print(f"Time with python fib functions using numba for n, n=20,...,45:")
+	print(timeFibN)
 
 	f = Person(47)
 	tstartC = time.perf_counter()
