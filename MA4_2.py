@@ -16,7 +16,7 @@ def main():
 	timeFibC = []
 	timeFibP = []
 	timeFibN = []
-	test1 = list(range(20, 45))
+	test1 = list(range(20, 46))
 	for x in test1:
 		if x >= 30:
 			f = Person(x)
