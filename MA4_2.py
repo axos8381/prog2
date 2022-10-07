@@ -42,7 +42,7 @@ def main():
 		tstopN = time.perf_counter()
 		tidN = tstopN - tstartN
 		timeFibN.append(tidN)
-		if x < 35:
+		if x < 41:
 			tstartP = time.perf_counter()
 			fib_py(x)
 			tstopP = time.perf_counter()
