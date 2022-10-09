@@ -52,12 +52,12 @@ def main():
 		else:
 			timeFibP.append(0)
 
-	print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
-	print(timeFibC)
-	print(f"Time with python fib functions for n, n=20,...,40:")
-	print(timeFibP)
-	print(f"Time with python fib functions using numba for n, n=20,...,45:")
-	print(timeFibN)
+	# print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
+	# print(timeFibC)
+	# print(f"Time with python fib functions for n, n=20,...,40:")
+	# print(timeFibP)
+	# print(f"Time with python fib functions using numba for n, n=20,...,45:")
+	# print(timeFibN)
 
 	f = Person(47)
 	tstartC = time.perf_counter()
@@ -73,8 +73,6 @@ def main():
 	print(f"fib for fib(47) took {tidN} seconds to calculate using Python with numba function")
 
 
-	# plt.scatter(nValues, timeFibC)
-	# plt.savefig('plotted_points.png')
 
 	plt.figure(figsize=(5, 2.7), layout='constrained')
 	plt.plot(nValues, timeFibC, label='C++')  # Plot some data on the (implicit) axes.
@@ -84,13 +82,6 @@ def main():
 	plt.ylabel('Time [s]')
 	plt.title("Fibonacci calculations")
 	plt.legend()
-
-	# fig, ax=plt.subplots(1)
-    # ax.set_aspect('equal')
-    # ax.scatter(nValues, timeFibC, c='r', alpha=0.8, edgecolors=None, label='C++')
-    # ax.scatter(nValues, timeFibP, c='b', alpha=0.8, edgecolors=None, label='Normal Python')
-	# ax.scatter(nValues, timeFibN, c='g', alpha=0.8, edgecolors=None, label='Numba Python')
-    # fig.savefig('fib_calc.png')
 
 
 	
