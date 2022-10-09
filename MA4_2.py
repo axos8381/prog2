@@ -3,6 +3,7 @@
 from person import Person
 import time
 from numba import njit
+import matplotlib.pyplot as plt
 
 
 def fib_py(n):
@@ -24,8 +25,8 @@ def main():
 	timeFibC = []
 	timeFibP = []
 	timeFibN = []
-	test1 = list(range(20, 46))
-	for x in test1:
+	nValues = list(range(20, 46))
+	for x in nValues:
 		if x >= 30:
 			f = Person(x)
 			tstartC = time.perf_counter()
@@ -70,6 +71,13 @@ def main():
 	tstopN = time.perf_counter()
 	tidN = tstopN - tstartN
 	print(f"fib for fib(47) took {tidN} seconds to calculate using Python with numba function")
+
+	fig, ax=plt.subplots(1)
+    ax.set_aspect('equal')
+    ax.scatter(nValues, timeFibC, c='r', alpha=0.8, edgecolors=None, label='C++')
+    ax.scatter(nValues, timeFibP, c='b', alpha=0.8, edgecolors=None, label='Normal Python')
+	ax.scatter(nValues, timeFibN, c='g', alpha=0.8, edgecolors=None, label='Numba Python')
+    fig.savefig('fib_calc.png')
 
 
 	
