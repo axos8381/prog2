@@ -72,12 +72,16 @@ def main():
 	tidN = tstopN - tstartN
 	print(f"fib for fib(47) took {tidN} seconds to calculate using Python with numba function")
 
-	fig, ax=plt.subplots(1)
-    ax.set_aspect('equal')
-    ax.scatter(nValues, timeFibC, c='r', alpha=0.8, edgecolors=None, label='C++')
-    ax.scatter(nValues, timeFibP, c='b', alpha=0.8, edgecolors=None, label='Normal Python')
-	ax.scatter(nValues, timeFibN, c='g', alpha=0.8, edgecolors=None, label='Numba Python')
-    fig.savefig('fib_calc.png')
+
+	plt.scatter(nValues, timeFibC)
+	plt.savefig('plotted_points.png')
+
+	# fig, ax=plt.subplots(1)
+    # ax.set_aspect('equal')
+    # ax.scatter(nValues, timeFibC, c='r', alpha=0.8, edgecolors=None, label='C++')
+    # ax.scatter(nValues, timeFibP, c='b', alpha=0.8, edgecolors=None, label='Normal Python')
+	# ax.scatter(nValues, timeFibN, c='g', alpha=0.8, edgecolors=None, label='Numba Python')
+    # fig.savefig('fib_calc.png')
 
 
 	
