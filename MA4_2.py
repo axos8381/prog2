@@ -73,8 +73,17 @@ def main():
 	print(f"fib for fib(47) took {tidN} seconds to calculate using Python with numba function")
 
 
-	plt.scatter(nValues, timeFibC)
-	plt.savefig('plotted_points.png')
+	# plt.scatter(nValues, timeFibC)
+	# plt.savefig('plotted_points.png')
+
+	plt.figure(figsize=(5, 2.7), layout='constrained')
+	plt.plot(nValues, timeFibC, label='C++')  # Plot some data on the (implicit) axes.
+	plt.plot(nValues, timeFibP, label='Normal Python')  # etc.
+	plt.plot(nValues, timeFibN, label='Numba Python')
+	plt.xlabel('n')
+	plt.ylabel('Time [s]')
+	plt.title("Fibonacci calculations")
+	plt.legend()
 
 	# fig, ax=plt.subplots(1)
     # ax.set_aspect('equal')
