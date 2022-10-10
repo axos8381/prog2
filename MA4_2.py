@@ -82,6 +82,7 @@ def main():
 	plt.ylabel('Time [s]')
 	plt.title("Fibonacci calculations")
 	plt.legend()
+	plt.savefig('Fibonacci_plot.png')
 
 
 	
