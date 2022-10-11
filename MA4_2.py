@@ -26,6 +26,7 @@ def main():
 	timeFibP = []
 	timeFibN = []
 	nValues = list(range(20, 46))
+	nValuesP = list(range(20, 43))
 	for x in nValues:
 		if x >= 30:
 			f = Person(x)
@@ -43,14 +44,13 @@ def main():
 		tstopN = time.perf_counter()
 		tidN = tstopN - tstartN
 		timeFibN.append(tidN)
-		if x < 41:
+		if x < 43:
 			tstartP = time.perf_counter()
 			fib_py(x)
 			tstopP = time.perf_counter()
 			tidP = tstopP - tstartP
 			timeFibP.append(tidP)
-		else:
-			timeFibP.append(0)
+		
 
 	# print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
 	# print(timeFibC)
