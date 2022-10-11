@@ -52,13 +52,6 @@ def main():
 			timeFibP.append(tidP)
 		
 
-	# print(f"Time with C++ fib functions for Person(n), n=30,...,45:")
-	# print(timeFibC)
-	# print(f"Time with python fib functions for n, n=20,...,40:")
-	# print(timeFibP)
-	# print(f"Time with python fib functions using numba for n, n=20,...,45:")
-	# print(timeFibN)
-
 	f = Person(47)
 	tstartC = time.perf_counter()
 	f.fib()
@@ -75,8 +68,8 @@ def main():
 
 
 	plt.figure(figsize=(5, 2.7), layout='constrained')
-	plt.plot(nValues, timeFibC, label='C++')  # Plot some data on the (implicit) axes.
-	plt.plot(nValues, timeFibP, label='Normal Python')  # etc.
+	plt.plot(nValues, timeFibC, label='C++')
+	plt.plot(nValuesP, timeFibP, label='Normal Python')
 	plt.plot(nValues, timeFibN, label='Numba Python')
 	plt.xlabel('n')
 	plt.ylabel('Time [s]')
