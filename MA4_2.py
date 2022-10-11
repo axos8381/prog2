@@ -27,47 +27,46 @@ def main():
 	timeFibN1 = []
 	timeFibP2 = []
 	timeFibN2 = []
-	nValues = list(range(20, 46))
+
 	nPlot1 = list(range(30, 46))
 	nPlot2 = list(range(20, 31))
-	for x in nValues:
-		if x >= 30:
-			f = Person(x)
-			tstartC = time.perf_counter()
-			f.fib()
-			tstopC = time.perf_counter()
-			tidC = tstopC - tstartC
-			timeFibC.append(tidC)
+	for x in nPlot1:
+		f = Person(x)
+		tstartC = time.perf_counter()
+		f.fib()
+		tstopC = time.perf_counter()
+		tidC = tstopC - tstartC
+		timeFibC.append(tidC)
 
-			tstartN = time.perf_counter()
-			fib_numba(x)
-			tstopN = time.perf_counter()
-			tidN = tstopN - tstartN
-			timeFibN1.append(tidN)
-			#if x < 44:
-			tstartP = time.perf_counter()
-			fib_py(x)
-			tstopP = time.perf_counter()
-			tidP = tstopP - tstartP
-			timeFibP1.append(tidP)
-			# else:
-			# 	timeFibP1.append(tidP)
-		else:
-			tstartN = time.perf_counter()
-			fib_numba(x)
-			tstopN = time.perf_counter()
-			tidN = tstopN - tstartN
-			timeFibN2.append(tidN)
+		tstartN = time.perf_counter()
+		fib_numba(x)
+		tstopN = time.perf_counter()
+		tidN = tstopN - tstartN
+		timeFibN1.append(tidN)
+		#if x < 44:
+		tstartP = time.perf_counter()
+		fib_py(x)
+		tstopP = time.perf_counter()
+		tidP = tstopP - tstartP
+		timeFibP1.append(tidP)
+		# else:
+		# 	timeFibP1.append(tidP)
+	for x in nPlot1:
+		tstartN = time.perf_counter()
+		fib_numba(x)
+		tstopN = time.perf_counter()
+		tidN = tstopN - tstartN
+		timeFibN2.append(tidN)
 
-			tstartP = time.perf_counter()
-			fib_py(x)
-			tstopP = time.perf_counter()
-			tidP = tstopP - tstartP
-			timeFibP2.append(tidP)
+		tstartP = time.perf_counter()
+		fib_py(x)
+		tstopP = time.perf_counter()
+		tidP = tstopP - tstartP
+		timeFibP2.append(tidP)
 
-		
+	
 
-		
+	
 
 
 		
