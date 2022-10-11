@@ -23,10 +23,13 @@ def  fib_numba(n):
 
 def main():
 	timeFibC = []
-	timeFibP = []
-	timeFibN = []
+	timeFibP1 = []
+	timeFibN1 = []
+	timeFibP2 = []
+	timeFibN2 = []
 	nValues = list(range(20, 46))
-	nValuesP = list(range(20, 43))
+	nPlot1 = list(range(30, 46))
+	nPlot2 = list(range(20, 31))
 	for x in nValues:
 		if x >= 30:
 			f = Person(x)
@@ -35,21 +38,40 @@ def main():
 			tstopC = time.perf_counter()
 			tidC = tstopC - tstartC
 			timeFibC.append(tidC)
-		else:
-			timeFibC.append(0)
 
-
-		tstartN = time.perf_counter()
-		fib_numba(x)
-		tstopN = time.perf_counter()
-		tidN = tstopN - tstartN
-		timeFibN.append(tidN)
-		if x < 43:
+			tstartN = time.perf_counter()
+			fib_numba(x)
+			tstopN = time.perf_counter()
+			tidN = tstopN - tstartN
+			timeFibN1.append(tidN)
+			#if x < 44:
 			tstartP = time.perf_counter()
 			fib_py(x)
 			tstopP = time.perf_counter()
 			tidP = tstopP - tstartP
-			timeFibP.append(tidP)
+			timeFibP1.append(tidP)
+			# else:
+			# 	timeFibP1.append(tidP)
+		else:
+			tstartN = time.perf_counter()
+			fib_numba(x)
+			tstopN = time.perf_counter()
+			tidN = tstopN - tstartN
+			timeFibN2.append(tidN)
+
+			tstartP = time.perf_counter()
+			fib_py(x)
+			tstopP = time.perf_counter()
+			tidP = tstopP - tstartP
+			timeFibP2.append(tidP)
+
+		
+
+		
+
+
+		
+		
 		
 
 	f = Person(47)
@@ -68,14 +90,28 @@ def main():
 
 
 	plt.figure(figsize=(5, 2.7), layout='constrained')
-	plt.plot(nValues, timeFibC, label='C++')
-	plt.plot(nValuesP, timeFibP, label='Normal Python')
-	plt.plot(nValues, timeFibN, label='Numba Python')
+	plt.plot(nPlot1, timeFibC, label='C++')
+	plt.plot(nPlot1, timeFibP1, label='Normal Python')
+	plt.plot(nPlot1, timeFibN1, label='Numba Python')
 	plt.xlabel('n')
 	plt.ylabel('Time [s]')
 	plt.title("Fibonacci calculations")
 	plt.legend()
-	plt.savefig('Fibonacci_plot.png')
+	plt.savefig('Fibonacci_plot_high_n.png')
+
+
+	plt.figure(figsize=(5, 2.7), layout='constrained')
+	plt.plot(nPlot2, timeFibP2, label='Normal Python')
+	plt.plot(nPlot2, timeFibN2, label='Numba Python')
+	plt.xlabel('n')
+	plt.ylabel('Time [s]')
+	plt.title("Fibonacci calculations")
+	plt.legend()
+	plt.savefig('Fibonacci_plot_low_n.png')
+
+
+
+	#plt.savefig('Fibonacci_plot.png')
 
 
 	
