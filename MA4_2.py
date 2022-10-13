@@ -30,6 +30,7 @@ def main():
 
 	nPlot1 = list(range(30, 46))
 	nPlot2 = list(range(20, 31))
+	nPlotP1 = list(range(30, 44))
 	for x in nPlot1:
 		f = Person(x)
 		tstartC = time.perf_counter()
@@ -43,15 +44,14 @@ def main():
 		tstopN = time.perf_counter()
 		tidN = tstopN - tstartN
 		timeFibN1.append(tidN)
-		#if x < 44:
-		tstartP = time.perf_counter()
-		fib_py(x)
-		tstopP = time.perf_counter()
-		tidP = tstopP - tstartP
-		timeFibP1.append(tidP)
-		# else:
-		# 	timeFibP1.append(tidP)
-	for x in nPlot1:
+		if x < 44:
+			tstartP = time.perf_counter()
+			fib_py(x)
+			tstopP = time.perf_counter()
+			tidP = tstopP - tstartP
+			timeFibP1.append(tidP)
+		
+	for x in nPlot2:
 		tstartN = time.perf_counter()
 		fib_numba(x)
 		tstopN = time.perf_counter()
@@ -90,7 +90,7 @@ def main():
 
 	plt.figure(figsize=(5, 2.7), layout='constrained')
 	plt.plot(nPlot1, timeFibC, label='C++')
-	plt.plot(nPlot1, timeFibP1, label='Normal Python')
+	plt.plot(nPlotP1, timeFibP1, label='Normal Python')
 	plt.plot(nPlot1, timeFibN1, label='Numba Python')
 	plt.xlabel('n')
 	plt.ylabel('Time [s]')
