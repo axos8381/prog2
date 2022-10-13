@@ -91,9 +91,10 @@ def main():
 
 
 	plt.figure(figsize=(5, 2.7), layout='constrained')
+	plt.plot(nPlot1, timeFibN1, label='Numba Python')
 	plt.plot(nPlot1, timeFibC, label='C++')
 	plt.plot(nPlot1, timeFibP1, label='Normal Python')
-	plt.plot(nPlot1, timeFibN1, label='Numba Python')
+	
 	plt.xlabel('n')
 	plt.ylabel('Time [s]')
 	plt.title("Fibonacci calculations")
