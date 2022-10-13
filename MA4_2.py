@@ -50,6 +50,8 @@ def main():
 			tstopP = time.perf_counter()
 			tidP = tstopP - tstartP
 			timeFibP1.append(tidP)
+		else:
+			timeFibP1.append(None)
 		
 	for x in nPlot2:
 		tstartN = time.perf_counter()
@@ -90,7 +92,7 @@ def main():
 
 	plt.figure(figsize=(5, 2.7), layout='constrained')
 	plt.plot(nPlot1, timeFibC, label='C++')
-	plt.plot(nPlotP1, timeFibP1, label='Normal Python')
+	plt.plot(nPlot1, timeFibP1, label='Normal Python')
 	plt.plot(nPlot1, timeFibN1, label='Numba Python')
 	plt.xlabel('n')
 	plt.ylabel('Time [s]')
