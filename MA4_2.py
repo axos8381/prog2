@@ -78,16 +78,16 @@ def main():
 
 	f = Person(47)
 	tstartC = time.perf_counter()
-	f.fib()
+	c47 = f.fib()
 	tstopC = time.perf_counter()
 	tidC = tstopC - tstartC
-	print(f"fib for Person(47) took {tidC} seconds to calculate using C++ function")
+	print(f"fib for Person(47) took {tidC} seconds to calculate using C++ function {n47}")
 
 	tstartN = time.perf_counter()
-	fib_numba(47)
+	n47 = fib_numba(47)
 	tstopN = time.perf_counter()
 	tidN = tstopN - tstartN
-	print(f"fib for fib(47) took {tidN} seconds to calculate using Python with numba function")
+	print(f"fib for fib(47) took {tidN} seconds to calculate using Python with numba function, getting {n47}")
 
 
 
@@ -117,7 +117,7 @@ def main():
 
 
 
-
+#
 
 
 

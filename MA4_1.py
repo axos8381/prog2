@@ -160,8 +160,9 @@ if __name__ == "__main__":
 	# print ( f" Measured time for code from 1.2 with (n,d) = (10000000,11) is : {tstop2 - tstart2} seconds ")
 	#Takes ca 30 seconds
 
-	#I have 11 threads but no mather how many functions i try running in parralell it only seem to dubbel the speed?
-	
+	#8 Threads, 4 cores on my computor
+	#By Multiprocessing we devide it over the cores, by deviding 10 processes over 4 cores it takes about 3 times as fast
+	#It is closer to dubbel the speed, but when doing smaler calculations it is closer to 3 timesa s fast with the code (up to d=8)
 
 
 
