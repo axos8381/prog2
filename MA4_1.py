@@ -1,3 +1,11 @@
+"""
+
+Student: Axel Östfeldt
+Mail: axel.ostfeldt.8381@student.uu.se
+Reviewed by: Sven-Erik
+Date reviewed 17/10-22
+"""
+
 #!/usr/bin/env python3
 
 
